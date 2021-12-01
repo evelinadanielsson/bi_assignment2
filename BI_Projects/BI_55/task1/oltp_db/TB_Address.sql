@@ -6,7 +6,7 @@ CREATE TABLE TB_Address (
     PostalCode VARCHAR(15) NOT NULL,
     CONSTRAINT PK_Address PRIMARY KEY (AddressID), 
     CONSTRAINT FK_Country_Address FOREIGN KEY (CountryID)  
-    REFERENCES Country(CountryID)  
+    REFERENCES TB_Country(CountryID)  
     ON DELETE CASCADE  
     ON UPDATE CASCADE  
 );  
