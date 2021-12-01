@@ -3,6 +3,7 @@ Possibile choices for Assignment 3:
 Classification:
 * car evaluation https://www.openml.org/d/40664
 * traffic violations https://www.openml.org/d/42132
+* Steel Plates Faults Data Set -  http://archive.ics.uci.edu/ml/datasets/Steel+Plates+Faults
 
 Regression:
 * House Sales in King County USA https://www.kaggle.com/harlfoxem/housesalesprediction
