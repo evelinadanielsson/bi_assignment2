@@ -5,7 +5,7 @@ StandardCost, ListPrice, SellStartDate, SellEndDate,
         CASE 
         WHEN SellEndDate IS NULL OR SellEndDate>'2021-09-30' THEN 'Current'
         ELSE 'Discontinued' END
-FROM TB_Product
-INNER JOIN TB_ProductModel ON TB_Product.ProductModelID=TB_ProductModel.ProductModelID
-INNER JOIN TB_ProductSubCategory ON TB_Product.ProductSubCategoryID=TB_ProductSubCategory.ProductSubCategoryID
-INNER JOIN TB_ProductTopCategory ON TB_ProductSubCategory.ProductTopCategoryID=TB_ProductTopCategory.ProductTopCategoryID;
+FROM BI_Bikes_55.TB_Product
+INNER JOIN BI_Bikes_55.TB_ProductModel ON BI_Bikes_55.TB_Product.ProductModelID=BI_Bikes_55.TB_ProductModel.ProductModelID
+INNER JOIN BI_Bikes_55.TB_ProductSubCategory ON BI_Bikes_55.TB_Product.ProductSubCategoryID=BI_Bikes_55.TB_ProductSubCategory.ProductSubCategoryID
+INNER JOIN BI_Bikes_55.TB_ProductTopCategory ON BI_Bikes_55.TB_ProductSubCategory.ProductTopCategoryID=BI_Bikes_55.TB_ProductTopCategory.ProductTopCategoryID;
