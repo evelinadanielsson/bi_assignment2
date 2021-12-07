@@ -26,12 +26,12 @@
     </Hierarchy>
   </Dimension>
   <Dimension type="StandardDimension" visible="true" name="Customer">
-    <Hierarchy name="Age" visible="true" hasAll="true" primaryKey="CustomerKey" primaryKeyTable="Dim_Customer">
-      <Level name="Age" visible="true" table="Dim_Customer" column="Age" uniqueMembers="false">
-      </Level>
-    </Hierarchy>
     <Hierarchy name="Gender" visible="true" hasAll="true" primaryKey="CustomerKey" primaryKeyTable="Dim_Customer">
       <Level name="Gender" visible="true" table="Dim_Customer" column="Gender" uniqueMembers="false">
+      </Level>
+    </Hierarchy>
+    <Hierarchy name="Age" visible="true" hasAll="true" primaryKey="CustomerKey" primaryKeyTable="Dim_Customer">
+      <Level name="Age" visible="true" table="Dim_Customer" column="Age" uniqueMembers="false">
       </Level>
     </Hierarchy>
     <Hierarchy name="FullName" visible="true" hasAll="true" primaryKey="CustomerKey" primaryKeyTable="Dim_Customer">
@@ -42,13 +42,13 @@
   <Cube name="bike_sales" visible="true" cache="true" enabled="true">
     <Table name="Fact_InternetSales">
     </Table>
-    <DimensionUsage source="Customer" name="Customer" visible="true" foreignKey="CustomerKey">
-    </DimensionUsage>
     <DimensionUsage source="Product" name="Product" visible="true" foreignKey="ProductKey">
     </DimensionUsage>
     <DimensionUsage source="Location" name="ShippedTo" visible="true" foreignKey="ShipToLocationKey">
     </DimensionUsage>
     <DimensionUsage source="Date" name="OrderDate" visible="true" foreignKey="OrderDateKey">
+    </DimensionUsage>
+    <DimensionUsage source="Customer" name="Customer" visible="true" foreignKey="CustomerKey">
     </DimensionUsage>
     <Measure name="Quantity" column="OrderQty" aggregator="avg" visible="true">
     </Measure>
