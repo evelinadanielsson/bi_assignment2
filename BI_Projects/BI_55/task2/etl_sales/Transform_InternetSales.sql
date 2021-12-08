@@ -2,7 +2,7 @@ INSERT INTO Fact_InternetSales (SalesOrderLineNumber, SalesOrderNumber, OrderDat
     ShipDate, ProductKey, CustomerKey, ShipToLocationKey, OrderStatus, ShipMethod, OrderQty, UnitPrice, OrderLineTotal,
     OrderLineProfit, OrderLineTaxAmt, OrderLineShippingCost)
 SELECT 
-    ('SOL' + TB_SalesOrderDetail.SalesOrderID + '-' + TB_SalesOrderDetail.SalesOrderDetailID) AS SalesOrderLineNumber,
+    ('SOL' + CAST(TB_SalesOrderDetail.SalesOrderID AS varchar) + '-' + CAST(TB_SalesOrderDetail.SalesOrderDetailID AS varchar)) AS SalesOrderLineNumber,
     SalesOrderNumber AS SalesOrderNumber,
     YEAR(OrderDate) * 10000 + MONTH(OrderDate) * 100 + DAYOFMONTH(OrderDate) AS OrderDateKey,
     OrderDate AS OrderDate,
