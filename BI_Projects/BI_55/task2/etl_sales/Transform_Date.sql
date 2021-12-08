@@ -1,4 +1,4 @@
-INSERT INTO Dim_Date (DateKey, FullDataAlternateKey, DayNumberOfWeek, EnglishDayNameOfWeek, 
+INSERT IGNORE INTO Dim_Date (DateKey, FullDataAlternateKey, DayNumberOfWeek, EnglishDayNameOfWeek, 
 DayNumberOfMonth, DayNumberOfYear, WeekNumberOfYear, EnglishMonthName, MonthNumberOfYear, CalendarQuarter, CalendarYear)
 SELECT 
     YEAR(OrderDate) * 10000 + MONTH(OrderDate) * 100 + DAYOFMONTH(OrderDate) AS DateKey,
