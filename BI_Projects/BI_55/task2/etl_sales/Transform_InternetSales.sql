@@ -14,7 +14,7 @@ SELECT
     CustomerID AS CustomerKey,
     TB_Address.CountryID AS ShipToLocationKey,
     OrderStatusID AS OrderStatus,
-    TB_SalesOrderHeader.ShipMethodID AS ShipMethod,
+    TB_ShipMethod.ShipMethodName AS ShipMethod,
     OrderQty AS OrderQty,
     UnitPrice AS UnitPrice,
     (OrderQty * UnitPrice) AS OrderLineTotal,
