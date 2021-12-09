@@ -1,8 +1,8 @@
-INSERT INTO Fact_InternetSales (SalesOrderLineNumber, SalesOrderNumber, OrderDateKey, OrderDate, DueDateKey, DueDate, ShipDateKey, 
+INSERT IGNORE INTO Fact_InternetSales (SalesOrderLineNumber, SalesOrderNumber, OrderDateKey, OrderDate, DueDateKey, DueDate, ShipDateKey, 
     ShipDate, ProductKey, CustomerKey, ShipToLocationKey, OrderStatus, ShipMethod, OrderQty, UnitPrice, OrderLineTotal,
     OrderLineProfit, OrderLineTaxAmt, OrderLineShippingCost)
 SELECT 
-    ('SOL' + CAST(TB_SalesOrderDetail.SalesOrderID AS char) + '-' + CAST(TB_SalesOrderDetail.SalesOrderDetailID AS char)) AS SalesOrderLineNumber,
+    CONCAT('SOL', TB_SalesOrderDetail.SalesOrderID, '-', TB_SalesOrderDetail.SalesOrderDetailID) AS SalesOrderLineNumber,
     SalesOrderNumber AS SalesOrderNumber,
     YEAR(OrderDate) * 10000 + MONTH(OrderDate) * 100 + DAYOFMONTH(OrderDate) AS OrderDateKey,
     OrderDate AS OrderDate,
