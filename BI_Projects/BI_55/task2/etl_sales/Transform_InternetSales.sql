@@ -26,6 +26,6 @@ INNER JOIN BI_Bikes_55.TB_SalesOrderHeader ON BI_Bikes_55.TB_SalesOrderHeader.Sa
 INNER JOIN BI_Bikes_55.TB_Address ON BI_Bikes_55.TB_Address.AddressID=BI_Bikes_55.TB_SalesOrderHeader.ShipToAddressID
 INNER JOIN BI_Bikes_55.TB_Product ON BI_Bikes_55.TB_Product.ProductID=BI_Bikes_55.TB_SalesOrderDetail.ProductID
 INNER JOIN BI_Bikes_55.TB_Country ON BI_Bikes_55.TB_Country.CountryID=BI_Bikes_55.TB_Address.CountryID
-INNER JOIN BI_Bikes_55.TB_ShipMethod ON BI_Bikes_55.TB_SalesOrderHeader.ShipMethodID=BI_Bikes_55.TB_SalesOrderHeader.ShipMethodID
+INNER JOIN BI_Bikes_55.TB_ShipMethod ON BI_Bikes_55.TB_TB_ShipMethod.ShipMethodID=BI_Bikes_55.TB_SalesOrderHeader.ShipMethodID
 INNER JOIN BI_Bikes_55.TB_ProductSubCategory ON BI_Bikes_55.TB_Product.ProductSubCategoryID=BI_Bikes_55.TB_ProductSubCategory.ProductSubCategoryID
 INNER JOIN BI_Bikes_55.TB_ProductTopCategory ON BI_Bikes_55.TB_ProductTopCategory.ProductTopCategoryID=BI_Bikes_55.TB_ProductSubCategory.ProductTopCategoryID
