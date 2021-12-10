@@ -1,7 +1,7 @@
 <Schema name="bike_sales">
   <Dimension type="TimeDimension" visible="true" highCardinality="false" name="Date">
     <Hierarchy name="Days" visible="true" hasAll="true" primaryKey="DateKey">
-      <Table name="Dim_Date" alias="">
+      <Table name="Dim_Date">
       </Table>
       <Level name="Year" visible="true" table="Dim_Date" column="CalendarYear" type="String" uniqueMembers="false" levelType="TimeYears" hideMemberIf="Never">
       </Level>
@@ -13,7 +13,7 @@
   </Dimension>
   <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Location">
     <Hierarchy name="Territory" visible="true" hasAll="true" primaryKey="LocationKey">
-      <Table name="Dim_Location" alias="">
+      <Table name="Dim_Location">
       </Table>
       <Level name="Region" visible="true" table="Dim_Location" column="Region" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
@@ -33,7 +33,7 @@
   </Dimension>
   <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Customer">
     <Hierarchy name="Gender" visible="true" hasAll="true" primaryKey="CustomerKey">
-      <Table name="Dim_Customer" alias="">
+      <Table name="Dim_Customer">
       </Table>
       <Level name="Gender" visible="true" table="Dim_Customer" column="Gender" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
@@ -62,16 +62,15 @@
     </DimensionUsage>
     <DimensionUsage source="Customer" name="Customer" visible="true" foreignKey="CustomerKey" highCardinality="false">
     </DimensionUsage>
-    <Measure name="Quantity" column="OrderQty" aggregator="avg" visible="true">
+    <Measure name="Quantity" column="OrderQty" aggregator="sum" visible="true">
     </Measure>
-    <Measure name="Revenue" column="OrderLineTotal" formatString="Currency" aggregator="avg" visible="true">
+    <Measure name="Revenue" column="OrderLineTotal" formatString="Currency" aggregator="sum" visible="true">
     </Measure>
-    <Measure name="TaxAmount" column="OrderLineTaxAmt" formatString="Currency" aggregator="avg" visible="true">
+    <Measure name="TaxAmount" column="OrderLineTaxAmt" formatString="Currency" aggregator="sum" visible="true">
     </Measure>
-    <Measure name="Profit" column="OrderLineProfit" formatString="Currency" aggregator="avg" visible="true">
+    <Measure name="Profit" column="OrderLineProfit" formatString="Currency" aggregator="sum" visible="true">
     </Measure>
-    <Measure name="ShippingCost" column="OrderLineShippingCost" formatString="Currency" aggregator="avg" visible="true">
+    <Measure name="ShippingCost" column="OrderLineShippingCost" formatString="Currency" aggregator="sum" visible="true">
     </Measure>
   </Cube>
 </Schema>
-
