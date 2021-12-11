@@ -1,0 +1,8 @@
+SELECT NON EMPTY
+CROSSJOIN
+   (
+       {[OrderDate.Days].[2021].[1] : [OrderDate.Days].[2021].[6] },
+       {[ShippedTo.Territory].[Country].[France],[ShippedTo.Territory].[Country].[Germany]}
+   ) ON 0,
+[measures].[TaxAmount] ON 1
+FROM [bike_sales]

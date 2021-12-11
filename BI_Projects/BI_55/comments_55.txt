@@ -1,0 +1,8 @@
+The MDX queries could not be saved in .mdx format directly from Schema Workbench,
+therefore they have been saved in .mdx format through a text editor.
+
+BONUS:
+The proposed star schema is not optimal. One problem in that the fact table
+contains three different date keys (DueDateKey, ShipDateKey, OrderDateKey) which
+point at DateKey in the Date dimension table. This can result in overlapping of
+some date keys and should be resolved in order to find an optimal schema.

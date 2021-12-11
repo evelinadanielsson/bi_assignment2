@@ -1,0 +1,6 @@
+SELECT NON EMPTY ORDER([ShippedTo.Territory].[Country].members,
+			[measures].[Revenue],
+				BDESC) ON COLUMNS,
+		[measures].[Revenue] ON ROWS
+FROM [bike_sales]
+WHERE [OrderDate.Days].[2019]
