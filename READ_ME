@@ -9,3 +9,7 @@ Regression:
 * House Sales in King County USA https://www.kaggle.com/harlfoxem/housesalesprediction
 * Cancer death rate https://data.world/nrippner/ols-regression-challenge
 * Life expectancy https://www.kaggle.com/kumarajarshi/life-expectancy-who/
+
+
+Workers' productivity: Productivity Prediction of Garment Employees Data Set - https://archive.ics.uci.edu/ml/datasets/Productivity+Prediction+of+Garment+Employees
+(can be used as regression or classification by splitting the productivity variable into classes)
